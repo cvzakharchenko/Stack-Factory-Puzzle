@@ -1,8 +1,6 @@
 #include <iostream>
 #include <string>
 #include <memory>
-#include <cassert>
-
 
 struct X
 {
@@ -10,61 +8,45 @@ struct X
     friend struct X1;
     friend struct X2;
 
-
     virtual ~X() {}
-
-
     virtual void Process() = 0;
 
 private:
     X() {}
 };
 
-
 struct X0 final : public X
 {
     X0() { std::cout << "X0::X0 "; }
-
-
     ~X0() { std::cout << "\tX0::~X0\n"; }
 
 
     void Process() override { std::cout << "X0::Process: " << c_; }
 
-
     char c_ = 'A';
 };
-
 
 struct X1 final : public X
 {
     X1() { std::cout << "X1::X1 "; }
-
-
     ~X1() { std::cout << "\tX1::~X1\n"; }
 
 
     void Process() override { std::cout << "X1::Process: " << s_; }
 
-
     std::string s_ = "ABC";
 };
-
 
 struct X2 final : public X
 {
     X2() { std::cout << "X2::X2 "; }
-
-
     ~X2() { std::cout << "\tX2::~X2\n"; }
 
 
     void Process() override { std::cout << "X2::Process: " << i_; }
 
-
     int i_ = 123;
 };
-
 
 int main()
 {
