@@ -83,6 +83,7 @@ int main()
 
   return 0;
 }
+```
 
 My solution. Not short, but working.
 https://gist.github.com/cvzakharchenko/1ebb4d9838e2f1f8af2cdf1d1b7d31ce
