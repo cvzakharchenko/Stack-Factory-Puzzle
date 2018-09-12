@@ -80,7 +80,6 @@ int main()
 
         struct Test
         {
-            int num;
             X* x;
 
             union
@@ -90,9 +89,9 @@ int main()
               X2 x2;
             };
 
-            Test(tag0) : x0{}, num{0}, x{&x0} { }
-            Test(tag1) : x1{}, num{1}, x{&x1} { }
-            Test(tag2) : x2{}, num{2}, x{&x2} { }
+            Test(tag0) : x0{}, x{&x0} { }
+            Test(tag1) : x1{}, x{&x1} { }
+            Test(tag2) : x2{}, x{&x2} { }
 
             ~Test()
             {
