@@ -59,15 +59,11 @@ int main()
 
         // Begin
 
-        class Test
+        struct Test
         {
-        private:
-
             struct tag0 {};
             struct tag1 {};
             struct tag2 {};
-
-        public:
 
             X* x;
 
