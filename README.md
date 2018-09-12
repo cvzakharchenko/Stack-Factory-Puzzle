@@ -59,24 +59,28 @@ int main()
 
         // Begin
 
-        struct tag0 {};
-        struct tag1 {};
-        struct tag2 {};
-
-        struct Test
+        class Test
         {
+        private:
+
+            struct tag0 {};
+            struct tag1 {};
+            struct tag2 {};
+
+        public:
+
             X* x;
 
             union
             {
-              X0 x0;
-              X1 x1;
-              X2 x2;
+                X0 x0;
+                X1 x1;
+                X2 x2;
             };
 
-            Test(tag0) : x0{}, x{&x0} { }
-            Test(tag1) : x1{}, x{&x1} { }
-            Test(tag2) : x2{}, x{&x2} { }
+            Test(tag0) : x0{} { x = &x0; }
+            Test(tag1) : x1{} { x = &x1; }
+            Test(tag2) : x2{} { x = &x2; }
 
             ~Test()
             {
